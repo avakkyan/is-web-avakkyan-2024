@@ -8,11 +8,17 @@ body {
 }
 
 header {
-    background-color: #f5e1a4; /* Светло-песочный */
-    padding: 20px;
+    background-color: #F9DBCA;
+    padding: 10px;
     border-bottom: 2px solid #e0e0e0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav a {
@@ -25,6 +31,100 @@ nav a:hover {
     color: darkred;
     text-decoration: none;
 }
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.nav-links {
+    display: flex;
+    gap: 30px;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-icon .icon {
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #8b0000;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;   /* перенос */
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.img_gallery {
+    width: 100%;
+    height: 200%;
+    max-width: 100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    max-width: 250px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s;
+    background-color: #FFFFE0;
+    flex-grow: 1;
+}
+
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0 5px;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    color: #952F37;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .img_gallery {
+        flex: 1 1 45%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .img_gallery {
+        flex: 1 1 90%;
+    }
+}
 
 h3 {
     font-size: 1.4rem;
@@ -32,7 +132,7 @@ h3 {
     font-weight: 600;
     color: #8b0000;
     text-align: left;
-    background-color: #ffe4e1;
+    background-color: #F9DBCA;
     padding: 10px 20px;
     margin: 20px 0;
     border-radius: 8px;
@@ -48,12 +148,22 @@ q {
     border-left: 4px solid #8b0000;
 }
 
+footer {
+    position: absolute;
+    background-color: #f5e1a4;
+    padding: 10px;
+    text-align: center;
+    border-top: 2px solid #e0e0e0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
 .heading {
     color: darkred;
-    background-color: cornsilk;
+    background-color: #FAEAD7;
     padding: 16px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* смещение, размытие, цвет тени */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .about_image {
@@ -76,3 +186,71 @@ q {
     border-radius: 5px;
     overflow-x: auto;
 }
+
+@media screen and (max-width: 768px) {
+    .gallery img {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gallery img {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        display: none;
+    }
+}
+
+.price-table {
+    display: grid;
+    margin: 20px 0;
+    overflow-x: auto;
+    gap: 1px;
+    grid-template-columns: repeat(7, 1fr);
+
+}
+
+.price-table table {
+    display: grid;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+.price-table th, .price-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+thead th {
+    background-color: #f5e1a4;
+    font-weight: bold;
+    grid-auto-columns: auto;
+}
+
+thead tr {
+    background-color: #f5e1a4;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(odd) td {
+    background-color: #ffe4e1;
+}
+.column-price{
+}
+
+@media (max-width: 480px) {
+    .column-price {
+        display: none;
+    }
+}
+
