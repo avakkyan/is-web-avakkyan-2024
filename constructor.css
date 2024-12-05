@@ -116,7 +116,7 @@ footer {
 main {
     display: flex;
     align-items: flex-start;
-    gap: 20px; /* Расстояние между панелью и коллекцией */
+    gap: 20px;
     padding: 20px;
 }
 
@@ -131,15 +131,15 @@ main {
 .form-container form {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Расстояние между элементами формы */
+    gap: 15px;
 }
 
 .wine-collection {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Две колонки */
+    grid-template-columns: repeat(5, 1fr);
     grid-auto-rows: auto;
     gap: 20px;
-    max-width: 500px; /* Ширина для двух колонок */
+    max-width: 500px;
 }
 
 .wine-card {
@@ -163,8 +163,22 @@ main {
 }
 
 .wine-image {
-    width: 100%;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
 }
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Конструктор вин</title>
-  <link rel="stylesheet" href="lab5.css">
-  <script src="loader.js"></script>
+  <link rel="stylesheet" href="constructor.css">
   <script src="active_point.js"></script>
-  <script src="lab5.js" defer></script>
+  <script type="module" src="localWineStorage.js" defer></script>
+  <script type="module" src="fetchPics.js" defer></script>
 </head>
 <body>
 <header>
@@ -19,8 +19,22 @@
     <a href="vine_constuctor.html">Конструктор</a>
   </nav>
 </header>
-
 <main>
+  <template id="wine-card-template">
+    <div class="wine-card">
+      <img class="wine-image" src="images/spinn.gif" alt="Wine image">
+      <p class="wine-name"></p>
+      <p class="wine-country"></p>
+      <p class="wine-type"></p>
+      <p class="wine-price"></p>
+      <button class="delete-btn">Удалить</button>
+    </div>
+  </template>
+
+  <div id="preloader" style="display: none;">
+    <img src="images/spinn.gif" alt="Loading">
+  </div>
+
   <section class="form-container">
     <form id="wine-form">
       <label for="wine-name">Название вина:</label>
@@ -53,21 +67,9 @@
       <button type="submit">Добавить в коллекцию</button>
     </form>
   </section>
+  <section id="wine-collection" class="wine-collection"></section>
 
-  <section id="wine-collection" class="wine-collection">
-  </section>
-
-  <template id="wine-card-template">
-    <div class="wine-card">
-      <div class="wine-image" style="background-image: url('images/a.png');"></div>
-      <h3 class="wine-name"></h3>
-      <p><strong>Страна:</strong> <span class="wine-country"></span></p>
-      <p><strong>Тип:</strong> <span class="wine-type"></span></p>
-      <p><strong>Цена:</strong> <span class="wine-price"></span></p>
-      <button class="delete-btn">Удалить</button>
-    </div>
-  </template>
+  <div id="network-error" class="network-error" style="display:none;">Похоже, вам отрубили инет.</div>
 </main>
-
 </body>
 </html>
